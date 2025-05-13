@@ -1,4 +1,4 @@
-# Department Posts Viewer Task
+# Posts Viewer Task
 
 ## Objective
 
