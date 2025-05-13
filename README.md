@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# Department Posts Viewer Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective
 
-Currently, two official plugins are available:
+Create a functional React component with TypeScript that fetches and displays posts from JSONPlaceholder API, with filtering and sorting capabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
 
-## Expanding the ESLint configuration
+1.  Create a functional component using React and TypeScript
+2.  Fetch data from  https://jsonplaceholder.typicode.com/posts
+3.  Display the all posts and the total number of posts retrieved
+4.  Store posts in constants/state
+5.  Create and implement a Post data interface with an array of posts
+6.  Display alerts using Material UI components
+7.  Implement a reusable generic function that can filter an array of items by a specific field and value
+8.  Implement a reusable generic function that can sort an array of items by a specific field
+9.  Return appropriate JSX to display the data
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technical Specifications
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Post Interface
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Define an interface for post data with the following properties:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-   userId (number)
+-   id (number)
+-   title (string)
+-   body (string)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Generic Filter Function
+
+-   Create a function that accepts any array of objects, a field name, and a value
+-   The function should return a filtered array containing only items matching the criteria
+-   Include an option for partial matching on string fields
+
+### Generic Sort Function
+
+-   Create a function that accepts any array of objects, a field name, and a sort order ('asc' or 'desc')
+-   The function should return a sorted array based on the specified field and order
+
+### UI Requirements
+
+-   Use Material UI components for the interface
+-   Display an alert showing the number of posts retrieved
+-   Provide UI controls for filtering and sorting posts
+
+## Dependencies
+
+-   React
+-   TypeScript
+-   Material UI (@mui/material, @emotion/react, @emotion/styled)
+
+## Deliverables
+
+-   A functional React component that meets all requirements
+-   Properly typed interfaces and functions
+-   Clean, maintainable code with appropriate comments
+
+## Evaluation Criteria
+
+-   Correct implementation of TypeScript interfaces and generics
+-   Proper use of React hooks for state management
+-   Functionality of filtering and sorting features
+-   Code organization and readability
+-   Error handling for API requests
